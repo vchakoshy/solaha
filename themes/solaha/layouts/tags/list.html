@@ -1,0 +1,22 @@
+{{ define "main" }}
+<h1 class="text-2xl font-bold mb-6">#{{ .Title }}</h1>
+
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {{ range .Pages }}
+  <article class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow transition">
+
+    {{ with .Resources.GetMatch .Params.cover }}
+    {{ $thumb := .Fill "200x200 center webp q80" }}
+    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
+      class="rounded-xl w-full object-cover">
+    {{ end }}
+
+    <div class="p-4">
+      <h2 class="font-bold text-lg mb-2">
+        <a href="{{ .RelPermalink }}" class="hover:text-blue-600">{{ .LinkTitle }}</a>
+      </h2>
+    </div>
+  </article>
+  {{ end }}
+</section>
+{{ end }}
