@@ -1,0 +1,41 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "body",
+      "div",
+      "footer",
+      "h1",
+      "h2",
+      "h3",
+      "head",
+      "header",
+      "html",
+      "img",
+      "li",
+      "link",
+      "main",
+      "meta",
+      "nav",
+      "p",
+      "script",
+      "section",
+      "time",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "active",
+      "ancestor",
+      "container",
+      "max-auto",
+      "mx-au",
+      "mx-auth",
+      "mx-auto"
+    ],
+    "ids": [
+      "زندگینامه",
+      "وصیتنامه"
+    ]
+  }
+}
