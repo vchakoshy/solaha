@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+</head>
+
+<body>
+
+  <a href="/martyrs/">← بازگشت</a>
+
+  <h1>{{ .Title }}</h1>
+
+  <img src="{{ .Params.image }}" width="300">
+
+  <ul>
+    <li>تولد: {{ .Params.birth }}</li>
+    <li>شهادت: {{ .Params.martyrdom }}</li>
+    <li>محل: {{ .Params.location }}</li>
+  </ul>
+
+  <article>
+    {{ .Content }}
+  </article>
+
+</body>
+
+</html>
