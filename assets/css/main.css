@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @source "hugo_stats.json";
+
+* {
+  font-family: 'Vazir';
+}
