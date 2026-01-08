@@ -1,15 +1,20 @@
 {{ define "main" }}
 
-<section class="mb-10">
+<!-- <section class="mb-10">
   {{ .Content }}
-</section>
+</section> -->
 
-<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
   {{ range site.RegularPages }}
   <article class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow transition">
-    {{ with .Params.image }}
-    <img src="{{ . }}" class="w-full h-56 object-cover">
+
+    {{ with .Resources.GetMatch .Params.cover }}
+    {{ $thumb := .Fill "200x200 center webp q80" }}
+
+    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
+      class="rounded-xl w-full object-cover">
     {{ end }}
+
 
     <div class="p-4">
       <h2 class="font-bold text-lg mb-2">
@@ -18,9 +23,9 @@
         </a>
       </h2>
 
-      <p class="text-sm text-zinc-600">
+      <!-- <p class="text-sm text-zinc-600">
         {{ .Summary }}
-      </p>
+      </p> -->
     </div>
   </article>
   {{ end }}
