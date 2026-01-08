@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ site.Language.LanguageCode }}" dir="rtl">
+
 <head>
   {{ partial "head.html" . }}
 </head>
-<body dir="rtl">
-  <header class="container mx-auto">
+
+<body class="bg-zinc-50 text-zinc-800 font-sans">
+
+  <header class="max-w-7xl mx-auto px-4 py-4">
     {{ partial "header.html" . }}
   </header>
-  <main class="container mx-auto">
+
+  <main class="max-w-7xl mx-auto px-4 py-6 min-h-screen">
     {{ block "main" . }}{{ end }}
   </main>
-  <footer class="container mx-auto">
+
+  <footer class="max-w-7xl mx-auto px-4 py-6 border-t text-sm text-zinc-500">
     {{ partial "footer.html" . }}
   </footer>
+
 </body>
+
 </html>

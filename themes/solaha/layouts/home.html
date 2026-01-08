@@ -1,9 +1,29 @@
 {{ define "main" }}
+
+<section class="mb-10">
   {{ .Content }}
+</section>
+
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
   {{ range site.RegularPages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
+  <article class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow transition">
+    {{ with .Params.image }}
+    <img src="{{ . }}" class="w-full h-56 object-cover">
+    {{ end }}
+
+    <div class="p-4">
+      <h2 class="font-bold text-lg mb-2">
+        <a href="{{ .RelPermalink }}" class="hover:text-blue-600">
+          {{ .LinkTitle }}
+        </a>
+      </h2>
+
+      <p class="text-sm text-zinc-600">
+        {{ .Summary }}
+      </p>
+    </div>
+  </article>
   {{ end }}
+</section>
+
 {{ end }}
